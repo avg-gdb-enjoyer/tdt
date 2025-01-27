@@ -1,6 +1,138 @@
-[gd_scene format=3 uid="uid://bf4nggaydhoa6"]
+[gd_scene load_steps=2 format=3 uid="uid://bf4nggaydhoa6"]
+
+[ext_resource type="Texture2D" uid="uid://do5821fxl0o5p" path="res://Background.png" id="1_ftvyc"]
 
 [node name="Node" type="Node"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Settings menu" type="Control" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/Settings menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ftvyc")
+stretch_mode = 2
+
+[node name="Main Screen Elements" type="MarginContainer" parent="UI/Settings menu"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Settings menu/Main Screen Elements"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Settings separator" type="HSeparator" parent="UI/Settings menu/Main Screen Elements/VBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Settings title" type="Label" parent="UI/Settings menu/Main Screen Elements/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Volume setting" type="MenuButton" parent="UI/Settings menu/Main Screen Elements/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Volume"
+item_count = 2
+popup/item_0/text = "New game"
+popup/item_1/text = "Continue"
+popup/item_1/id = 1
+popup/item_1/disabled = true
+
+[node name="Setting" type="Button" parent="UI/Settings menu/Main Screen Elements/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "-
+"
+
+[node name="Main menu" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/Main menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ftvyc")
+stretch_mode = 2
+
+[node name="Main Screen Elements" type="MarginContainer" parent="UI/Main menu"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Main menu/Main Screen Elements"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Game Name title" type="Label" parent="UI/Main menu/Main Screen Elements/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 80
+text = "TDT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play-Pop" type="MenuButton" parent="UI/Main menu/Main Screen Elements/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+item_count = 2
+popup/item_0/text = "New game"
+popup/item_1/text = "Continue"
+popup/item_1/id = 1
+popup/item_1/disabled = true
+
+[node name="Settings button" type="Button" parent="UI/Main menu/Main Screen Elements/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
 
 [node name="Level" type="Node2D" parent="."]
 
